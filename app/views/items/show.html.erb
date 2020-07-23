@@ -1,0 +1,7 @@
+<img class="index-img" src="<%= @item.img_url %>" alt="<%= @item.name %>" width="400"<br/>
+<h1><%= @item.name %></h1><br/>
+<%= @item.description %><br/>
+<h4>Price: <%= @item.price %>GP</h4>
+<%= button_to "Edit Item", edit_item_path, method: :get %>
+<%= button_to "Back", items_path, method: :get %>
+<% #button_to "Destroy It!", @item, method: :destroy, data: { confirm: 'Wait, what are you doing???' } %>

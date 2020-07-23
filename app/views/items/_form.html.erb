@@ -1,0 +1,22 @@
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @item do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br/><br/>
+    <%= f.label :description %>
+    <%= f.text_field :description %><br/><br/>
+    <%= f.label :img_url %>
+    <%= f.text_field :img_url %><br/><br/>
+    <%= f.label :price %>
+    <%= f.number_field :price %><br/><br/>
+    <%= f.submit %>
+
+    <% end %><br/><br/>
+
+    <%= button_to "Back", items_path, method: :get %>

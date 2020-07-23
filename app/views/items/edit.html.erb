@@ -1,0 +1,21 @@
+<h1>Oh, you wanna haggle?</h1>
+<img class="index-img" src="<%= @item.img_url %>" alt="<%= @item.name %>" width="200"<br/>
+<h1><%= @item.name %></h1><br/>
+<%= @item.description %><br/>
+<h4>Jodi's Price: <%= @item.price %>GP</h4>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @item do |f| %>
+
+    <%= f.number_field :price %>GP
+    <%= f.submit "Haggle!" %>
+    <% end %>
+
+<%# maybe this could be haggling? %>

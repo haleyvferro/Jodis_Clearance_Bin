@@ -1,0 +1,10 @@
+<h1>what item would you like to buy?</h1>
+
+<%= form_for @sale do |f| %>
+    <%= f.label :player_id %>
+    <%= f.collection_select :player_id, @players, :id, :name %>
+    <%= f.label :item_id %>
+    <%= f.collection_select :item_id, @items, :id, :name %>
+
+    <%= f.submit %>
+    <% end %>

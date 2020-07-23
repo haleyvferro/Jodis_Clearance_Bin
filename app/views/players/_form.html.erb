@@ -1,0 +1,26 @@
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @player do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br/><br/>
+    <%= f.label :class %>
+    <%= f.text_field :class %><br/><br/>
+    <%= f.label :level %>
+    <%= f.number_field :level %><br/><br/>
+    <%=# f.label :can_detect_magic %>
+    <%=# f.text_field :can_detect_magic %><br/><br/>
+    <%=# check_box_tag(:can_detect_magic) %>
+    <%=# label_tag(:can_detect_magic, "Can you detect magic?") %>
+    <%= f.label :gold %>
+    <%= f.number_field :gold %><br/><br/>
+    <%= f.submit %>
+
+    <% end %><br/><br/>
+
+    <%= button_to "Back", players_path, method: :get %>
